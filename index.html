@@ -1,0 +1,29 @@
+### Hi there 👋
+
+<!--
+**hasryram/hasryram** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+-->
+let size = 10
+let isPressed = false
+let color = 'black'
+colorEl.value = 'black'
+let color = colorEl.value
+let x
+let y
+
+canvas.addEventListener('mousedown', (e) => {
+    isPressed = true
+    x = e.offsetX
+    y = e.offsetY
+})
+canvas.addEventListener('mouseup', (e) => {
+    isPressed = false
+    x = undefined
+    y = undefined
+})
+canvas.addEventListener('mousemove', (e) => {
+    if(isPressed) {
+        const x2 = e.offsetX
+        const y2 = e.offsetY
+        drawCircle(x2, y2)
